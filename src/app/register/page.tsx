@@ -33,7 +33,7 @@ export default function RegisterPage() {
     trigger,
     watch,
     formState: { errors },
-  } = useForm<FormData>({
+  } = useForm<any>({
     resolver: zodResolver(registrationSchema),
     mode: "onChange",
     defaultValues: {
@@ -94,7 +94,7 @@ export default function RegisterPage() {
     }
   };
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: any) => {
     console.log("REGISTERED:", data);
     setIsSuccess(true);
   };
